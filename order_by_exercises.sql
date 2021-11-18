@@ -1,6 +1,6 @@
 USE employees;
 
-SELECT * FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ORDER BY first_name;
+SELECT * FROM employees WHERE gender = 'M' AND (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya') ORDER BY first_name, last_name;
 
 SELECT * FROM employees WHERE last_name LIKE 'e%';
 
