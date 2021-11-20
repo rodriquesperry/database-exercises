@@ -16,8 +16,9 @@ WHERE last_name LIKE '%q%'
 GROUP BY last_name
 ORDER BY last_name;
 
-SELECT COUNT(*), gender
-AS 'Number of Males and Females Who Have These First Names'
+SELECT COUNT(*)
+AS 'Number of Males and Females Who Have These First Names',
+       gender
 FROM employees
 WHERE (first_name = 'Irena'
     OR first_name = 'Vidya'
