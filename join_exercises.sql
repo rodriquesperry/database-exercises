@@ -17,3 +17,14 @@ FROM employees as e
               ON d.dept_no = de.dept_no
 WHERE de.to_date = '9999-01-01' AND e.gender = 'F'
 ORDER BY dept_name;
+
+SELECT title, COUNT(title) AS TOTAL
+FROM titles as t
+JOIN dept_emp as de
+    ON t.emp_no = de.emp_no
+JOIN departments d
+    ON de.dept_no = d.dept_no
+WHERE de.to_date = '9999-01-01' AND d.dept_name = 'Customer Service'
+GROUP BY t.title;
+
+ON d.dept_name
