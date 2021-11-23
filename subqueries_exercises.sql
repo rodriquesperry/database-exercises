@@ -36,4 +36,18 @@ WHERE dept_no IN (
         WHERE gender = 'F'
         AND to_date > NOW()
         )
-)
+);
+
+SELECT first_name, last_name, emp_no
+from employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM salaries
+    WHERE salary = (
+        SELECT salary
+        FROM salaries
+        ORDER BY salary DESC
+        LIMIT 1
+     )
+    );
+
