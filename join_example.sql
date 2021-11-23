@@ -54,5 +54,5 @@ RIGHT JOIN roles ON users.role_id = roles.id;
 
 SELECT roles.name as role_name, COUNT(role_id) as '# OF EMPLOYEES WITH THIS ROLE'
 FROM users
-JOIN roles ON users.role_id = roles.id
+LEFT JOIN roles ON users.role_id = roles.id
 GROUP BY roles.name;

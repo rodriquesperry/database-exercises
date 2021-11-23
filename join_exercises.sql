@@ -39,3 +39,14 @@ FROM employees as e
 WHERE dm.to_date = '9999-01-01' #current employees
 AND s.to_date = '9999-01-01' #current salary of the employee
 ORDER BY dept_name;
+
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS EMPLOYEE, d.dept_name, CONCAT(e.first_name, ' ', e.last_name) AS MANAGER
+FROM employees as e
+         JOIN dept_emp de
+             ON e.emp_no = de.emp_no
+         JOIN dept_manager as dm
+              ON dm.emp_no = e.emp_no
+         JOIN departments as d
+              ON d.dept_no = dm.dept_no
+WHERE dm.to_date = '9999-01-01'
+ORDER BY dept_name;
