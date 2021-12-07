@@ -49,5 +49,5 @@ WHERE emp_no IN (
         ORDER BY salary DESC
         LIMIT 1
      )
-    );
+);
 
